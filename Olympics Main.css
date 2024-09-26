@@ -1,3 +1,55 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +58,7 @@
     overflow-x: hidden;
 }
 .bg-video video{
-    filter: blur(5px);
+    filter: blur(8px);
     position: fixed;
     top: 0;
     left: 0;
@@ -119,14 +171,14 @@ a:hover:after{
 }
 @media (min-aspect-ratio: 16/9){
     .back-video{
-        width: 100%;
-        height: auto;
+  width: 100%;
+  height: auto;
     }
 }
 @media (max-aspect-ratio: 16/9){
     .back-video{
-        width: auto;
-        height: 100%;
+  width: auto;
+  height: 100%;
     }
 }
  
@@ -329,7 +381,7 @@ footer {
   left: 0;
 }
 .container-right{
-  left: 50%;
+  left: 51%;
 }
 .timeline::after{
   content: '';
@@ -384,7 +436,6 @@ footer {
   color: #fff;
   height: 250px;
   width: 900px;
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -392,16 +443,17 @@ footer {
   border-radius: 30px;
 }
 .event-intro h2{
-  position: absolute;
-  top: 1070px;
-  left: 690px;
-  font-size: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 50px;
 }
 .event-intro p{
-  position: absolute;
-  top: 1190px;
-  left: 450px;
+  position: relative;
+  top: 40px;
+  left: 0px;
 }
+
 .events-grid {
   overflow-y: hidden;
   z-index: 10;
@@ -534,7 +586,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(20px);
   border-radius: 30px;
-  font-size: 35px;
+  font-size: 40px;
   left: 50%;
   top: 100px;
   height: 140px;
@@ -571,11 +623,13 @@ footer {
   transition: 0.3s ease;
   margin: 10px;
   font-weight: 600;
-  font-size: 50px;
+  font-size: 52px;
 }
 .venue-intro p{
 font-weight: 600;
 }
+
+/*Venue Hover CSS*/
 
 .venue-card-1:hover, .venue-card-2:hover, .venue-card-3:hover, .venue-card-4:hover{
   background-color: #fff;
@@ -596,14 +650,7 @@ font-weight: 600;
 }
 
 /*Hover Animation For Each Card*/
-.venue-card-1:hover{
-  height: 400px;
-  transition: 0.5s ease;
-  color: #000000;
-  background-color: #fff;
-  transform: scale(1.05); 
-}
-.venue-card-1{
+.venue-card-1, .venue-card-2, .venue-card-3, .venue-card-4{
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   transition: 0.5s;
@@ -616,6 +663,14 @@ font-weight: 600;
   transform: scale(1.05); 
   
 }
+.venue-card-1:hover{
+  height: 380px;
+  transition: 0.5s ease;
+  color: #000000;
+  background-color: #fff;
+  transform: scale(1.05); 
+}
+
 .venue-card-2:hover{
   height: 400px;
   transition: 0.5s ease;
@@ -624,18 +679,6 @@ font-weight: 600;
   transform: scale(1.05); 
   
 }
-.venue-card-2{
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  transition: 0.5s ease;
-  height: 150px;
-  transition: height 0.5s;
-
-  transition: 0.5s ease;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: scale(1.05); 
-}
 .venue-card-3:hover{
   height: 400px;
   transition: 0.5s ease;
@@ -643,39 +686,51 @@ font-weight: 600;
   background-color: #fff;
   transform: scale(1.05); 
 }
-.venue-card-3{
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  transition: 0.5s ease;
-  height: 150px;
-  transition: height 0.5s;
-
-  transition: 0.5s ease;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: scale(1.05); 
-}
 .venue-card-4:hover{
-  height: 400px;
+  height: 380px;
   transition: 0.5s ease;
   color: #000000;
   background-color: #fff;
   transform: scale(1.05); 
 }
-.venue-card-4{
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  transition: 0.5s ease;
-  height: 150px;
-  transition: height 0.5s;
 
-  transition: 0.5s ease;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: scale(1.05); 
+/*Venue Images CSS*/
+
+.venue-card-1 img{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 50px;
+  left: -10px;
+  border-radius: 10px;
 }
 
+.venue-card-2 img{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 50px;
+  left: -10px;
+  border-radius: 10px;
+}
 
+.venue-card-3 img{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 50px;
+  left: -10px;
+  border-radius: 10px;
+}
+
+.venue-card-4 img{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 50px;
+  left: -10px;
+  border-radius: 10px;
+}
 
 .venues-grid {
   display: grid;
@@ -792,3 +847,62 @@ font-weight: 600;
   left: 0;
   padding: 30px;
 }
+
+/*News Image CSS*/
+
+.venue-card-1 img{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 50px;
+  left: -10px;
+  border-radius: 10px;
+}
+
+.venue-card-2 img{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 50px;
+  left: -10px;
+  border-radius: 10px;
+}
+
+.venue-card-3 img{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  top: 50px;
+  left: -10px;
+  border-radius: 10px;
+}
+
+
+/*Leaderboard CSS*/
+.leaderboard-intro {
+  position: relative;
+  margin-top: 300x;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  padding: 10px;
+  border-radius: 30px;
+  color: #fff;
+  width: 900px;
+  height: 200px;
+  margin: 0 auto;
+  overflow-y: hidden;
+}
+
+.leaderboard-intro h2{
+  font-size: 50px;
+  padding: 25px;
+  border-radius: 30px;
+  color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 175px;
+}
+
