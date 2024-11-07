@@ -322,6 +322,7 @@ footer {
 
 /* Back to Top button */
 #back-to-top {
+  z-index: 100;
   position: fixed;
   bottom: -30px;
   right: 105px;
@@ -353,7 +354,6 @@ footer {
 }
 
 /* Timeline Section */
-
 
 .timeline{
   position: relative;
@@ -806,7 +806,7 @@ font-weight: 600;
   width: max-content; 
 }
 
-.news-item {
+.news-item-1, .news-item-2, .news-item-3{
   background-color: rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -823,11 +823,15 @@ font-weight: 600;
   backdrop-filter: blur(20px);
 }
 
-.news-item:hover {
+.news-item-1:hover, .news-item-2:hover, .news-item-3:hover {
   background-color: #fff;
   color: #000000;
   transition: 0.5s ease;
- 
+}
+.news-item-1, .news-item-2, .news-item-3 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  transition: 0.5s ease;
 }
 
 .news-intro{
@@ -846,35 +850,6 @@ font-weight: 600;
   margin: 20px auto;
   left: 0;
   padding: 30px;
-}
-
-/*News Image CSS*/
-
-.venue-card-1 img{
-  position: relative;
-  width: 300px;
-  height: 200px;
-  top: 50px;
-  left: -10px;
-  border-radius: 10px;
-}
-
-.venue-card-2 img{
-  position: relative;
-  width: 300px;
-  height: 200px;
-  top: 50px;
-  left: -10px;
-  border-radius: 10px;
-}
-
-.venue-card-3 img{
-  position: relative;
-  width: 300px;
-  height: 200px;
-  top: 50px;
-  left: -10px;
-  border-radius: 10px;
 }
 
 
